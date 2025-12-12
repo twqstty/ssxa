@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации с валидацией</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dsd.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Регистрация</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="username">Имя пользователя <span class="required">*</span></label>
+                    <input type="text" id="username" name="username" placeholder="Введите имя пользователя">
+                    <div class="error-message" id="usernameError">Имя должно содержать 3-20 символов (буквы и цифры)</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="text" id="email" name="email" placeholder="Введите email">
+                    <div class="error-message" id="emailError">Введите корректный email</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    <div class="error-message" id="phoneError">Введите корректный номер телефона</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль <span class="required">*</span></label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Введите пароль">
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError">Пароль должен содержать не менее 6 символов</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Подтверждение пароля <span class="required">*</span></label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль">
+                        <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError">Пароли не совпадают</div>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">Зарегистрироваться</button>
+                
+                <div class="form-footer">
+                    Уже есть аккаунт? <a href="#">Войти</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Регистрация завершена!</h3>
+            <p>Вы успешно зарегистрировались. Добро пожаловать!</p>
+            <button class="close-modal" id="closeModal">Продолжить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
